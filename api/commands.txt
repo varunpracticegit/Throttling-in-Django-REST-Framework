@@ -1,0 +1,20 @@
+1. To get token
+http POST http://127.0.0.1:8000/gettoken/ username="" password=""
+
+2. To verify the token that you got at 1
+http http://127.0.0.1:8000/verifytoken/ token=""
+
+3. To refresh the token or to get a new token on expiration
+http http://127.0.0.1:8000/refreshtoken/ refresh=""
+
+4. To access the api using the generated token
+http http://127.0.0.1:8000/studentapi/ 'Authorization:Bearer token'
+
+5. To post new data
+http -f POST http://127.0.0.1:8000/studentapi/ name=Harsh roll=203 city=Rewari 'Authorization: Bearer token'
+
+6. To update existing data
+http PUT http://127.0.0.1:8000/studentapi/3/ name=Harsh roll=204 city=Gurgaon 'Authorization: Bearer token'
+
+7. To delete the existing data
+http DELETE http://127.0.0.1:8000/studentapi/3/ 'Authorization: Bearer token'
